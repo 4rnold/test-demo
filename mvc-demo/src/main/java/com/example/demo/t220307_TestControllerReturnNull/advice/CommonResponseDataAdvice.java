@@ -27,7 +27,7 @@ public class CommonResponseDataAdvice implements ResponseBodyAdvice<Object> {
     public Object beforeBodyWrite(Object body, MethodParameter returnType, MediaType selectedContentType, Class<? extends HttpMessageConverter<?>> selectedConverterType, ServerHttpRequest request, ServerHttpResponse response) {
         CommonResponse<Object> res = new CommonResponse<>();
         if (null == body) {
-            //return response;
+            //return response;  //这里错误
         } else if (body instanceof CommonResponse) {
             res = (CommonResponse<Object>) body;
         } else {
